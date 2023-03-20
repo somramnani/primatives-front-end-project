@@ -22,7 +22,7 @@ function App() {
       method: "get",
       url: "https://api.primitives.xyz/api/interview/tokens",
     }).then(function (response) {
-      let list = response.data.tokens.list;
+      const list = response.data.tokens.list;
       console.log(list);
       setToken(list);
     });
