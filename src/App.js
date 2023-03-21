@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
-  const [tokens, setToken] = useState("");
+  const [tokens, setToken] = useState([]);
 
   // function getData() {
   //   return axios.get("https://api.primitives.xyz/api/interview/tokens");
@@ -23,24 +23,23 @@ function App() {
       url: "https://api.primitives.xyz/api/interview/tokens",
     }).then(function (response) {
       const list = response.data.tokens.list;
-      console.log(list);
       setToken(list);
     });
 
   useEffect(() => {
     getData();
   });
-  console.log(tokens);
 
   return (
     <div>
       {tokens.map((token) => (
         <>
-          <img src={token.imageURL} />
+          <img alt="" src={token.imageURL} />
           <h1>{token.name}</h1>
           <p>Address: {token.address}</p>
         </>
       ))}
+      test
     </div>
   );
 }
