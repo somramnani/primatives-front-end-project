@@ -22,8 +22,9 @@ function App() {
 
   const getData = async () =>
     axios({
-      method: "get",
-      url: "https://api.primitives.xyz/api/interview/tokens",
+      method: "POST",
+      url: "https://api.primitives.xyz/api/interview/searchTokens",
+      params: { q: "Not Bored Apes" },
     }).then(function (response) {
       const list = response.data.tokens.list;
       setToken(list);
