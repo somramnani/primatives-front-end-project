@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     getData();
-  });
+  }, []);
 
   return (
     <div>
