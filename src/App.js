@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Cards from "./components/Cards";
+import Box from "@mui/system/Box";
+import Grid from "@mui/system/Unstable_Grid";
 
 function App() {
   const [tokens, setToken] = useState([]);
@@ -31,15 +34,20 @@ function App() {
   }, []);
 
   return (
-    <div>
-      {tokens.map((token) => (
-        <>
-          <img alt="" src={token.imageURL} />
-          <h1>{token.name}</h1>
-          <p>Address: {token.address}</p>
-        </>
-      ))}
-      test
+    <div className="App">
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          {tokens.map((token) => (
+            <Grid>
+              <Cards
+                src={token.imageURL}
+                name={token.name}
+                address={token.address}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </div>
   );
 }
