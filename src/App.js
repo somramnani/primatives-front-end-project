@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import axios from "axios";
 import Cards from "./components/Cards";
 import Box from "@mui/system/Box";
 import Grid from "@mui/system/Unstable_Grid";
@@ -24,7 +23,6 @@ function App() {
 
   const getData = (params) => 
     fetch(`http://localhost:3001/api/${encodeURIComponent(params)}`, {
-      // mode: 'same-origin',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -41,8 +39,6 @@ function App() {
   // useEffect(() => {
   //   getData("");
   // }, []);
-  
-  // console.log(tokens)
 
   const handleOnChange = (event) => {
     let value = event.target.value;
@@ -53,16 +49,13 @@ function App() {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     getData(input);
-    console.log(tokens);
-    // console.log(getData("no bored apes"));
   };
  
 
-  const clear = () => {
-    window.location.reload(false);
-    // setInput("");
-    // getData("");
+  const clear = async () => {
+     window.location.reload(false);
   };
+
   return (
     <div className="App">
       <Searchbar
