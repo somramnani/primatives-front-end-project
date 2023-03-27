@@ -50,10 +50,12 @@ Original Code from interview:
   };
  
   const clear = () => {
-    setToken([])
+    setToken([]);
+    setInput('')
   };
 
   return (
+    <div className = "body">
     <div className="App">
       <Searchbar
         input={input}
@@ -74,6 +76,7 @@ Original Code from interview:
           ))}
         </Grid>
       </Box>
+    </div>
     </div>
   );
 }
