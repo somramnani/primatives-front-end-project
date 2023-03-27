@@ -42,7 +42,6 @@ Original Code from interview:
     event.preventDefault();
     let value = event.target.value;
     setInput(value);
-    console.log(value);
   };
 
   const handleOnSubmit = (e) => {
