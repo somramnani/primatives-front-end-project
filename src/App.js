@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
-import axios from "axios";
 import Cards from "./components/Cards";
 import Box from "@mui/system/Box";
 import Grid from "@mui/system/Unstable_Grid";
@@ -9,22 +8,25 @@ import Searchbar from "./components/Searchbar";
 function App() {
   const [tokens, setToken] = useState([]);
   const [input, setInput] = useState("");
+  
+/*
+  function getData() {
+    return axios.get("https://api.primitives.xyz/api/interview/tokens");
+  }
+  const data = Promise.all([getData()]);
 
-  // function getData() {
-  //   return axios.get("https://api.primitives.xyz/api/interview/tokens");
-  // }
-  // const data = Promise.all([getData()]);
+  Promise.all(getData()).then(function (data) {
+    console.log(data[0].data.tokens.list);
+    // setToken(data[0].data.tokens.list);
+  });
 
-  // useEffect(() => []);
-
-  // Promise.all(getData()).then(function (data) {
-  //   console.log(data[0].data.tokens.list);
-  //   // setToken(data[0].data.tokens.list);
-  // });
+  useEffect(() => {
+    getData("");
+  }, []);
+  */
 
   const getData = (params) => 
     fetch(`http://localhost:3001/api/${encodeURIComponent(params)}`, {
-      // mode: 'same-origin',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -38,13 +40,12 @@ function App() {
     });
 
   
-  // useEffect(() => {
-  //   getData("");
-  // }, []);
+
   
-  // console.log(tokens)
+ 
 
   const handleOnChange = (event) => {
+    event.preventDefault();
     let value = event.target.value;
     setInput(value);
     console.log(value);
@@ -53,16 +54,12 @@ function App() {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     getData(input);
-    console.log(tokens);
-    // console.log(getData("no bored apes"));
   };
  
-
   const clear = () => {
     window.location.reload(false);
-    // setInput("");
-    // getData("");
   };
+
   return (
     <div className="App">
       <Searchbar
