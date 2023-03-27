@@ -51,6 +51,7 @@ Original Code from interview:
  
   const clear = () => {
     setToken([]);
+    setInput('')
   };
 
   return (
