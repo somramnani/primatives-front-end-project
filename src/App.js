@@ -39,11 +39,6 @@ function App() {
       console.log(tokens);
     });
 
-  
-
-  
- 
-
   const handleOnChange = (event) => {
     event.preventDefault();
     let value = event.target.value;
