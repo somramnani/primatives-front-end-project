@@ -26,7 +26,7 @@ function App() {
   */
 
   const getData = (params) => 
-    fetch(`https://primatives-front-end-project.vercel.app/api/${encodeURIComponent(params)}`, {
+    fetch(`https://primatives-front-end-project.vercel.app/${encodeURIComponent(params)}`, {
       headers: {
         'Content-Type': 'application/json'
       },
