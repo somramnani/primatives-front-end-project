@@ -9,7 +9,8 @@ In the project directory, you can run:
 ### `npm run server`
 Runs the app in development mode and the server. \
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser. \
-Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.\
+Use this to run the app as both are required to run.
 
 ### `npm start`
 
