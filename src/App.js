@@ -1,15 +1,14 @@
 import { useState } from "react";
 import "./App.css";
+import axios from "axios";
 import Cards from "./components/Cards";
 import Box from "@mui/system/Box";
 import Grid from "@mui/system/Unstable_Grid";
 import Searchbar from "./components/Searchbar";
 
 function App() {
-  const [tokens, setToken] = useState([]);
-  const [input, setInput] = useState("");
-  
 /*
+Original Code from interview:
   function getData() {
     return axios.get("https://api.primitives.xyz/api/interview/tokens");
   }
@@ -24,25 +23,20 @@ function App() {
     getData("");
   }, []);
   */
-
-  const getData = (params) => 
-    fetch(`https://primatives-front-end-project.vercel.app/${encodeURIComponent(params)}`, {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    }).then(function (response) {
-      console.log(response)
-      return response.json();
-    }).then(tokenList => {
-      const list = tokenList.tokens.list;
-      setToken(list);
-      console.log(tokens);
-    });
-
-  
-
-  
  
+  const [tokens, setToken] = useState([]);
+  const [input, setInput] = useState("");
+
+  const getData = (params) => {
+    axios({
+      headers: {'Content-Type': 'application/json'},
+      method: 'get',
+      url: `http://localhost:3001/api/${encodeURIComponent(params)}`,
+    }).then(function(response){
+      let list = response.data.tokens.list;
+      setToken(list);
+    })
+  }
 
   const handleOnChange = (event) => {
     event.preventDefault();
