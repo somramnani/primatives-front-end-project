@@ -50,7 +50,7 @@ Original Code from interview:
   };
  
   const clear = () => {
-    window.location.reload(false);
+    setToken([]);
   };
 
   return (
