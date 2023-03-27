@@ -25,7 +25,7 @@ function App() {
   }, []);
   */
 
-  const getData = (params) => 
+  const getData = (params) => {
     fetch(`http://localhost:3001/api/${encodeURIComponent(params)}`, {
       headers: {
         'Content-Type': 'application/json'
@@ -37,7 +37,9 @@ function App() {
       const list = tokenList.tokens.list;
       setToken(list);
       console.log(tokens);
-    });
+    }); 
+  }
+
 
   const handleOnChange = (event) => {
     event.preventDefault();
