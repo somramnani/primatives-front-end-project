@@ -14,7 +14,7 @@ Original Code from interview:
   }
   const data = Promise.all([getData()]);
 
-  Promise.all(getD/ata()).then(function (data) {
+  Promise.all(getData()).then(function (data) {
     console.log(data[0].data.tokens.list);
     // setToken(data[0].data.tokens.list);
   });
@@ -23,7 +23,7 @@ Original Code from interview:
     getData("");
   }, []);
   */
- 
+
   const [tokens, setToken] = useState([]);
   const [input, setInput] = useState("");
 
