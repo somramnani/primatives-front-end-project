@@ -3,6 +3,7 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+// import styles from "./styles"
 
 export default function Searchbar({
   input,
@@ -11,8 +12,8 @@ export default function Searchbar({
   clear,
 }) {
   return (
-    <div>
-      <Stack spacing={2} direction="row">
+    <div > 
+      <Stack spacing={2} direction="row" style={{paddingBottom: "20px"}}>
         <TextField
           value={input}
           onChange={handleOnChange}
