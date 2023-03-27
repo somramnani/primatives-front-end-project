@@ -55,6 +55,7 @@ Original Code from interview:
   };
 
   return (
+    <div className = "body">
     <div className="App">
       <Searchbar
         input={input}
@@ -75,6 +76,7 @@ Original Code from interview:
           ))}
         </Grid>
       </Box>
+    </div>
     </div>
   );
 }
