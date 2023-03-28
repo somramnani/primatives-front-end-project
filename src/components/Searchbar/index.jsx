@@ -12,14 +12,15 @@ export default function Searchbar({
   clear,
 }) {
   return (
-    <div  
+    <div
       style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "100%"
-    }}> 
-      <Stack spacing={2} direction="row" style={{paddingBottom: "20px"}}>
+        height: "100%",
+      }}
+    >
+      <Stack spacing={2} direction="row" style={{ paddingBottom: "20px" }}>
         <TextField
           value={input}
           onChange={handleOnChange}
