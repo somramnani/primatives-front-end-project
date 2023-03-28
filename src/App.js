@@ -29,7 +29,7 @@ Original Code from interview:
   const [input, setInput] = useState("");
   let [loading, setLoading] = useState("none");
 
-  const getData = (params) => {
+  const getData = async (params) => {
     setLoading("flex");
     setTimeout(() => {
       axios({
@@ -41,7 +41,7 @@ Original Code from interview:
         setToken(list);
         setLoading("none");
       });
-    }, "1000");
+    }, "500");
   };
 
   const handleOnChange = (event) => {
