@@ -66,7 +66,7 @@ Original Code from interview:
       <Box sx={{ flexGrow: 1 }}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           {tokens.map((token) => (
-            <Grid>
+            <Grid key={token}>
               <Cards
                 src={token.imageURL}
                 name={token.name}
