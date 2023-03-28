@@ -85,15 +85,19 @@ Original Code from interview:
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
             <CircularProgress style={{ display: `${loading}` }} />
-            {tokens.map((token) => (
-              <Grid key={token}>
-                <Cards
-                  src={token.imageURL}
-                  name={token.name}
-                  address={token.address}
-                />
-              </Grid>
-            ))}
+            {tokens.length === 0 ? (
+              <div>No Results</div>
+            ) : (
+              tokens.map((token) => (
+                <Grid key={token}>
+                  <Cards
+                    src={token.imageURL}
+                    name={token.name}
+                    address={token.address}
+                  />
+                </Grid>
+              ))
+            )}
           </Grid>
         </Box>
       </div>
