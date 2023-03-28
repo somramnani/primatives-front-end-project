@@ -30,7 +30,7 @@ Original Code from interview:
   let [loading, setLoading] = useState("none");
 
   const getData = async (params) => {
-    setLoading("flex");
+    if (input) setLoading("flex");
     setTimeout(() => {
       axios({
         headers: { "Content-Type": "application/json" },
