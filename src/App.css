@@ -1,12 +1,8 @@
+.body {
+  background-color: #f8f8ff;
+  height: 1000px;
+}
+
 .App {
   padding: 20px;
-
-}
-.body{
-  background-color:#F8F8FF;
-  height: 100%;
-  margin: auto 10px;
-  width: auto;
-  height: 1000px;
-
 }
