@@ -55,11 +55,17 @@ Original Code from interview:
     setInput("");
   };
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
     clear();
-    getData(input);
+    await getData(input).then(() => {
+      if (tokens.length === 0) alert("no tokens");
+    });
   };
+
+  // const showResults = () => {
+  //   if(!)
+  // }
 
   return (
     <div className="body">
