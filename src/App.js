@@ -29,13 +29,18 @@ Original Code from interview:
   const [input, setInput] = useState("");
   let [loading, setLoading] = useState("none");
 
-  const getData = async (params) => {
+  const getData = (params) => {
     if (input) setLoading("flex");
     setTimeout(() => {
       axios({
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          accept: "application/json",
+        },
         method: "get",
-        url: `https://api-proxy-server-steel.vercel.app/api/${params}`,
+        url: `https://api-proxy-server-steel.vercel.app/api/post/https://api.primitives.xyz/api/interview/searchTokens/${params}`,
+        // url: `http://localhost:3001/api/post/https://api.primitives.xyz/api/interview/searchTokens/${params}`,
       }).then(function (response) {
         let list = response.data.tokens.list;
         setToken(list);

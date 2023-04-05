@@ -34,6 +34,7 @@ export default function Searchbar({
                 type="button"
                 sx={{ p: "10px" }}
                 aria-label="search"
+                disabled={!input}
               >
                 <SearchIcon />
               </IconButton>
