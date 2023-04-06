@@ -35,7 +35,7 @@ Original Code from interview:
       axios({
         headers: { "Content-Type": "application/json" },
         method: "get",
-        url: `https://api-proxy-server-steel.vercel.app/api/${params}`,
+        url: `https://proxy-server-1-7rt3pvhfn-somramnani.vercel.app/api/${params}`,
       }).then(function (response) {
         let list = response.data.tokens.list;
         setToken(list);
