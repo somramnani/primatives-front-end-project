@@ -38,6 +38,7 @@ Original Code from interview:
           "Access-Control-Allow-Origin": "*",
           accept: "application/json",
         },
+        mode: "cors",
         method: "get",
         url: `https://api-proxy-server-steel.vercel.app/api/post/https://api.primitives.xyz/api/interview/searchTokens/${params}`,
         // url: `http://localhost:3001/api/post/https://api.primitives.xyz/api/interview/searchTokens/${params}`,
